@@ -98,7 +98,7 @@ const MoonIcon = () => (
 // ─── Hamburger icon (animates between ☰ and ✕) ───────────────────────────────
 
 const HamburgerIcon = ({ open }) => (
-  <div className="relative size-6 flex flex-col justify-center gap-[5px]">
+  <div className="relative size-6 flex flex-col justify-center gap-1.25">
     <motion.span
       className="block h-0.5 w-full bg-current rounded-full origin-center"
       animate={open ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
