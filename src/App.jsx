@@ -1,5 +1,7 @@
+// src/App.jsx
 import Navbar from './components/Navbar'
 import CustomCursor from './components/CustomCursor'
+import HeroSection from './sections/HeroSection'
 import './App.css'
 
 function App() {
@@ -8,14 +10,9 @@ function App() {
       <CustomCursor />
       <Navbar />
 
-      {/* Each section id must match NAV_LINKS hrefs in Navbar.jsx */}
-      <main className="pt-16 bg-white dark:bg-zinc-950 min-h-screen transition-colors duration-300"> {/* offset for fixed navbar height */}
+      <main className="bg-white dark:bg-zinc-950 transition-colors duration-300">
 
-        <section id="hero" className="min-h-screen flex items-center justify-center">
-          <h1 className="text-4xl font-bold text-zinc-900 dark:text-white">
-            Hey, I'm Ankush 👋
-          </h1>
-        </section>
+        <HeroSection />
 
         <section id="about" className="min-h-screen flex items-center justify-center">
           <h2 className="text-2xl font-semibold text-zinc-700 dark:text-zinc-300">About</h2>
