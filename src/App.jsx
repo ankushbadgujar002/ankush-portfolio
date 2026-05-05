@@ -2,9 +2,15 @@
 import Navbar from './components/Navbar'
 import CustomCursor from './components/CustomCursor'
 import HeroSection from './sections/HeroSection'
+import AboutSection from "./sections/AboutSection";
+import SkillsSection from "./sections/SkillsSection";
+import useLenis from './hooks/useLenis'
 import './App.css'
 
 function App() {
+
+  useLenis();
+
   return (
     <>
       <CustomCursor />
@@ -14,13 +20,9 @@ function App() {
 
         <HeroSection />
 
-        <section id="about" className="min-h-screen flex items-center justify-center">
-          <h2 className="text-2xl font-semibold text-zinc-700 dark:text-zinc-300">About</h2>
-        </section>
+        <AboutSection />
 
-        <section id="skills" className="min-h-screen flex items-center justify-center">
-          <h2 className="text-2xl font-semibold text-zinc-700 dark:text-zinc-300">Skills</h2>
-        </section>
+        <SkillsSection />
 
         <section id="projects" className="min-h-screen flex items-center justify-center">
           <h2 className="text-2xl font-semibold text-zinc-700 dark:text-zinc-300">Projects</h2>

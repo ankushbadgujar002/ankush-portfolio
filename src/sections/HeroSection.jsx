@@ -5,6 +5,7 @@
 import { motion } from "framer-motion";
 import ankushImg from "../assets/ankush.png";
 import HeroText from "../components/HeroText";
+import ParticleBackground from "../components/ParticleBackground";
 
 // ── Animation variants ────────────────────────────────────────────────────────
 
@@ -46,12 +47,13 @@ export default function HeroSection() {
     return (
         <section
             id="hero"
-            className="min-h-screen flex items-center
+            className="relative overflow-hidden min-h-screen flex items-center
                  bg-white dark:bg-zinc-950
                  px-6 md:px-16 lg:px-24"
         >
-            <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2
-                      gap-12 md:gap-8 items-center py-24 md:py-0">
+            <ParticleBackground />
+            <div className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2
+          gap-12 md:gap-8 items-center py-24 md:py-0">
 
                 {/* ── LEFT — Text ───────────────────────────────────────────── */}
                 <motion.div
