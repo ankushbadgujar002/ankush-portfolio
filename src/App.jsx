@@ -6,6 +6,8 @@ import AboutSection from "./sections/AboutSection";
 import SkillsSection from "./sections/SkillsSection";
 import useLenis from './hooks/useLenis'
 import './App.css'
+import ProjectsSection from './sections/ProjectsSection';
+import ExperienceSection from './sections/ExperienceSection';
 
 function App() {
 
@@ -24,13 +26,9 @@ function App() {
 
         <SkillsSection />
 
-        <section id="projects" className="min-h-screen flex items-center justify-center">
-          <h2 className="text-2xl font-semibold text-zinc-700 dark:text-zinc-300">Projects</h2>
-        </section>
+        <ProjectsSection />
 
-        <section id="experience" className="min-h-screen flex items-center justify-center">
-          <h2 className="text-2xl font-semibold text-zinc-700 dark:text-zinc-300">Experience</h2>
-        </section>
+        <ExperienceSection />
 
         <section id="contact" className="min-h-screen flex items-center justify-center">
           <h2 className="text-2xl font-semibold text-zinc-700 dark:text-zinc-300">Contact</h2>
