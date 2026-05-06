@@ -74,19 +74,22 @@ const COLOR = {
   indigo: {
     dot: "bg-indigo-500",
     ring: "ring-indigo-500/30",
-    badge: "bg-indigo-50 dark:bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 ring-indigo-200 dark:ring-indigo-500/30",
+    badge:
+      "bg-indigo-50 dark:bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 ring-indigo-200 dark:ring-indigo-500/30",
     line: "from-indigo-500",
   },
   violet: {
     dot: "bg-violet-500",
     ring: "ring-violet-500/30",
-    badge: "bg-violet-50 dark:bg-violet-500/15 text-violet-600 dark:text-violet-400 ring-violet-200 dark:ring-violet-500/30",
+    badge:
+      "bg-violet-50 dark:bg-violet-500/15 text-violet-600 dark:text-violet-400 ring-violet-200 dark:ring-violet-500/30",
     line: "from-violet-500",
   },
   purple: {
     dot: "bg-purple-600",
     ring: "ring-purple-500/30",
-    badge: "bg-purple-50 dark:bg-purple-500/15 text-purple-600 dark:text-purple-400 ring-purple-200 dark:ring-purple-500/30",
+    badge:
+      "bg-purple-50 dark:bg-purple-500/15 text-purple-600 dark:text-purple-400 ring-purple-200 dark:ring-purple-500/30",
     line: "from-purple-600",
   },
 };
@@ -103,11 +106,7 @@ function TimelineItem({ item, index }) {
 
     gsap.fromTo(
       el,
-      {
-        opacity: 0,
-        x: isEven ? -48 : 48,
-        y: 20,
-      },
+      { opacity: 0, x: isEven ? -48 : 48, y: 20 },
       {
         opacity: 1,
         x: 0,
@@ -128,12 +127,14 @@ function TimelineItem({ item, index }) {
   return (
     <div
       ref={itemRef}
-      className={`relative flex items-start gap-4 md:gap-0 ${
-        isEven ? "md:flex-row" : "md:flex-row-reverse"
-      }`}
+      className={`relative flex items-start gap-4 md:gap-0 ${isEven ? "md:flex-row" : "md:flex-row-reverse"
+        }`}
     >
       {/* ── Card ── */}
-      <div className={`w-full md:w-[calc(50%-2.5rem)] ${isEven ? "md:pr-10 md:text-right" : "md:pl-10 md:text-left"}`}>
+      <div
+        className={`w-full md:w-[calc(50%-2.5rem)] ${isEven ? "md:pr-10 md:text-right" : "md:pl-10 md:text-left"
+          }`}
+      >
         <div
           className="group relative p-5 rounded-2xl
             bg-white dark:bg-zinc-900
@@ -166,7 +167,7 @@ function TimelineItem({ item, index }) {
         </div>
       </div>
 
-      {/* ── Centre dot ── */}
+      {/* ── Centre dot — desktop only ── */}
       <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center z-10">
         <div
           className={`w-4 h-4 rounded-full ${c.dot} ring-4 ${c.ring} ring-offset-2
@@ -174,8 +175,12 @@ function TimelineItem({ item, index }) {
         />
       </div>
 
-      {/* Mobile left dot */}
-      <div className={`flex md:hidden shrink-0 mt-1.5`}>
+      {/* ── Mobile dot ──
+          The cards wrapper has pl-8 (32px). The line sits at left-1.5 (6px)
+          in the outer relative container. This TimelineItem is inside that
+          pl-8, so left-0 here = 32px from the outer edge.
+          To reach the line at 6px: 6px - 32px + half-dot(6px) = -20px        */}
+      <div className="md:hidden absolute -left-5 top-1.5 z-10">
         <div className={`w-3 h-3 rounded-full ${c.dot} ring-2 ${c.ring}`} />
       </div>
     </div>
@@ -247,7 +252,7 @@ export default function AboutSection() {
         }
       );
 
-      // Timeline vertical line draw — from height 0 → full height
+      // Timeline vertical line draw
       gsap.fromTo(
         lineRef.current,
         { scaleY: 0, transformOrigin: "top center" },
@@ -276,7 +281,7 @@ export default function AboutSection() {
         bg-zinc-50 dark:bg-zinc-900
         overflow-hidden"
     >
-      {/* Subtle parallax bg blob */}
+      {/* bg blobs */}
       <div
         className="absolute top-0 right-0 w-150 h-150 rounded-full
           bg-indigo-100/40 dark:bg-indigo-950/30
@@ -292,15 +297,12 @@ export default function AboutSection() {
 
         {/* ── Section header ── */}
         <div ref={headingRef} className="mb-4">
-          <span className="text-xs font-semibold tracking-widest uppercase
-            text-indigo-500 dark:text-indigo-400">
+          <span className="text-xs font-semibold tracking-widest uppercase text-indigo-500 dark:text-indigo-400">
             About Me
           </span>
-          <h2 className="mt-2 text-3xl md:text-4xl font-bold
-            text-zinc-900 dark:text-white leading-tight">
+          <h2 className="mt-2 text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white leading-tight">
             Building things that{" "}
-            <span className="bg-linear-to-r from-indigo-500 via-violet-500 to-purple-600
-              bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-indigo-500 via-violet-500 to-purple-600 bg-clip-text text-transparent">
               work & feel great
             </span>
           </h2>
@@ -329,10 +331,8 @@ export default function AboutSection() {
           ].map((s) => (
             <div
               key={s.label}
-              className="px-5 py-3 rounded-xl
-                bg-white dark:bg-zinc-800
-                border border-zinc-100 dark:border-zinc-700
-                shadow-sm"
+              className="px-5 py-3 rounded-xl bg-white dark:bg-zinc-800
+                border border-zinc-100 dark:border-zinc-700 shadow-sm"
             >
               <p className="text-2xl font-bold text-zinc-900 dark:text-white leading-none">
                 {s.value}
@@ -344,26 +344,25 @@ export default function AboutSection() {
 
         {/* ── Timeline ── */}
         <div className="mb-12">
-          <h3 className="text-sm font-semibold tracking-widest uppercase
-            text-zinc-400 dark:text-zinc-500 mb-10">
+          <h3 className="text-sm font-semibold tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-10">
             Journey
           </h3>
 
           <div className="relative">
-            {/* Vertical line — desktop only, GSAP draws it */}
+            {/* Desktop vertical line — GSAP draws it */}
             <div
               ref={lineRef}
               className="hidden md:block absolute left-1/2 -translate-x-px top-0 bottom-0
-                w-px bg-linear-to-b from-indigo-500 via-violet-500 to-purple-600
-                origin-top"
+                w-px bg-linear-to-b from-indigo-500 via-violet-500 to-purple-600 origin-top"
             />
 
-            {/* Mobile vertical line */}
+            {/* Mobile vertical line — left-1.5 = 6px */}
             <div
               className="md:hidden absolute left-1.5 top-0 bottom-0
                 w-px bg-linear-to-b from-indigo-500 via-violet-500 to-purple-600"
             />
 
+            {/* pl-8 = 32px clears space for the line + dot on mobile */}
             <div className="flex flex-col gap-10 md:gap-12 pl-8 md:pl-0">
               {TIMELINE.map((item, i) => (
                 <TimelineItem key={item.year} item={item} index={i} />
