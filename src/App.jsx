@@ -8,6 +8,7 @@ import useLenis from './hooks/useLenis'
 import './App.css'
 import ProjectsSection from './sections/ProjectsSection';
 import ExperienceSection from './sections/ExperienceSection';
+import ContactSection from './sections/ContactSection';
 
 function App() {
 
@@ -30,9 +31,7 @@ function App() {
 
         <ExperienceSection />
 
-        <section id="contact" className="min-h-screen flex items-center justify-center">
-          <h2 className="text-2xl font-semibold text-zinc-700 dark:text-zinc-300">Contact</h2>
-        </section>
+        <ContactSection />
 
       </main>
     </>
