@@ -187,7 +187,7 @@ export default function ContactSection() {
                             </a>
 
                             <a
-                                href="https://wa.me/91XXXXXXXXXX"
+                                href="https://wa.me/9172479138"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-3 rounded-xl
