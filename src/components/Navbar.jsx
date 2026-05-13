@@ -12,7 +12,7 @@ const NAV_LINKS = [
 
 const GITHUB_URL = "https://github.com/ankushbadgujar002";
 const LINKEDIN_URL = "https://linkedin.com/in/ankush-badgujar-908904256";
-const RESUME_URL = "/Ankush_-_Fullstack_Resume.pdf"; // put your resume in /public
+const RESUME_URL = "/Ankush_Fullstack_Resume.pdf";
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
 
